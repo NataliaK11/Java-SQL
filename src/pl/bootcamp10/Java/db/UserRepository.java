@@ -104,5 +104,23 @@ public class UserRepository {
             return false;
         }
     }
+    public static boolean identificateAdmin(User user){
+        String sql="SELECT * FROM tuser WHERE id=1";
+        try {
+
+            PreparedStatement ps = UserRepository.connection.prepareStatement(sql);
+            ResultSet resultSet=ps.executeQuery();
+            if(resultSet.next()) {
+                String adminNameFromDataBase = resultSet.getString("login");
+                String adminPasswordFromDataBase = resultSet.getString("pass");
+                if (user.getLogin().equals(adminNameFromDataBase) || adminPasswordFromDataBase.equals(DigestUtils.md5Hex(user.getPassword()))) {
+                    return true;
+                } else return false;
+            }else return false;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
 
