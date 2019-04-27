@@ -73,7 +73,7 @@ while (resultSet.next()) {
 
     }
 
-    public static Car reservationCar(){
+    public static Car enterCarDetails(){
         Scanner input=new Scanner(System.in);
         System.out.println("podaj markę samochodu");
         String brand=input.nextLine();
@@ -106,6 +106,22 @@ while (resultSet.next()) {
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+    public static int getCarIdFromDatabase(Car car) {
+        String sql = "SELECT *FROM tcar WHERE brand=?";
+        try {
+            PreparedStatement ps = CarRepository.connection.prepareStatement(sql);
+            ps.setString(1,"brand");
+            ResultSet resultSet=ps.executeQuery();
+            while (true) {
+                if (resultSet.getString("model").equals(car.getModel()) || (resultSet.getInt("year") == car.getYear()))
+                    return resultSet.getInt("id");
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return -1;
         }
     }
 

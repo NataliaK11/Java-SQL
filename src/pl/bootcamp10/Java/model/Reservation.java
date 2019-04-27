@@ -8,8 +8,8 @@ public class Reservation {
     private Date endDate;
     private int carId;
 
-    public Reservation(int id, Date startDate, Date endDate, int carId) {
-        this.id = id;
+    public Reservation(Date startDate, Date endDate, int carId) {
+        //this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
         this.carId = carId;

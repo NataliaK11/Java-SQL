@@ -1,11 +1,14 @@
 package pl.bootcamp10.Java.db;
 
+import pl.bootcamp10.Java.model.Car;
 import pl.bootcamp10.Java.model.Reservation;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Date;
+import java.util.Scanner;
 
 public class ReservationRepository {
     public static Connection connection = null;
@@ -36,4 +39,22 @@ public class ReservationRepository {
         }
     }
 
+//    public static void enterYourReservation() {
+//        Scanner input = new Scanner(System.in);
+//        while (true) {
+//            System.out.println("Podaj datę rozpoczęcia rezerwacji");
+//            Date startDate;
+//            System.out.println("Podaj datę zakońćzenia");
+//            Date endDate;
+//            Car car = CarRepository.enterCarDetails();
+//            if (CarRepository.checkIfCarExist(car)) {
+//                int carIdFromDatabase = CarRepository.getCarIdFromDatabase(car);
+//                Reservation reservation = new Reservation(startDate, endDate, carIdFromDatabase);
+//                addReservation(reservation);
+//            } else System.out.println("takie auto nie istnieje w naszej bazie");
+//        }
+//    }
+    public static void showAllReservations(){
+
+    }
 }

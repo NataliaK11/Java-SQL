@@ -1,6 +1,7 @@
 package pl.bootcamp10.Java.gui;
 
 import pl.bootcamp10.Java.db.CarRepository;
+import pl.bootcamp10.Java.db.ReservationRepository;
 import pl.bootcamp10.Java.db.UserRepository;
 import pl.bootcamp10.Java.model.Car;
 import pl.bootcamp10.Java.model.CarType;
@@ -106,7 +107,7 @@ public class Gui {
                             while (true) {
                                 switch (halloCustomer()) {
                                     case 1: {
-
+                                        ReservationRepository.enterYourReservation();
                                     }
                                     break;
                                     case 2: {
@@ -175,17 +176,6 @@ public class Gui {
         }
     }
 
-
-//private static Reservation addReservation(){
- //       Scanner input=new Scanner(System.in);
- //   System.out.println("Podaj datę rozpoczęcia rezerwacji");
- //   System.out.println("Podaj datę zakońćzenia");
- //   Car car=CarRepository.reservationCar();
- //   if (CarRepository.checkIfCarExist(car)){
-
- //   }
-
-//}
 
 
 }
