@@ -107,7 +107,7 @@ public class Gui {
                             while (true) {
                                 switch (halloCustomer()) {
                                     case 1: {
-                                        ReservationRepository.enterYourReservation();
+                                       // ReservationRepository.enterYourReservation();
                                     }
                                     break;
                                     case 2: {
